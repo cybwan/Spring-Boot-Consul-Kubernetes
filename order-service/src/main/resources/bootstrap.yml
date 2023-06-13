@@ -41,7 +41,7 @@ spring:
   profiles: prod-zone1
   cloud:
     consul:
-      host: http://consul-0.consul.default.svc.cluster.local
+      host: http://consul.default
       config:
         enabled: true
       discovery:
@@ -56,7 +56,7 @@ spring:
   profiles: prod-zone2
   cloud:
     consul:
-      host: http://consul-0.consul.default.svc.cluster.local
+      host: http://consul.default
       config:
         enabled: true
       discovery:

@@ -8,29 +8,29 @@ spring:
       discovery:
         locator:
           enabled: true
-      default-filters:
-        - name: AuthFilter
+      #default-filters:
+      #  - name: AuthFilter
       routes:
         - id: account-service
-          uri: lb://account-service
+          uri: lb://account-service:9003
           predicates:
             - Path=/account/**
           filters:
             - RewritePath=/account/(?<path>.*), /$\{path}
         - id: customer-service
-          uri: lb://customer-service
+          uri: lb://customer-service:9002
           predicates:
             - Path=/customer/**
           filters:
             - RewritePath=/customer/(?<path>.*), /$\{path}
         - id: order-service
-          uri: lb://order-service
+          uri: lb://order-service:9000
           predicates:
             - Path=/order/**
           filters:
             - RewritePath=/order/(?<path>.*), /$\{path}
         - id: product-service
-          uri: lb://product-service
+          uri: lb://product-service:9001
           predicates:
             - Path=/product/**
           filters:
